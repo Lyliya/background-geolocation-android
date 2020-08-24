@@ -349,7 +349,7 @@ public class DistanceFilterLocationProvider extends AbstractLocationProvider imp
         Double newDistanceFilter = (double) mConfig.getDistanceFilter();
         if (speed < 100) {
             float roundedDistanceFilter = (round(speed / 5) * 5);
-            newDistanceFilter = pow(roundedDistanceFilter, 2) + (double) mConfig.getDistanceFilter();
+            newDistanceFilter = pow(roundedDistanceFilter, 1.8) + (double) mConfig.getDistanceFilter();
         }
         return (newDistanceFilter.intValue() < 1000) ? newDistanceFilter.intValue() : 1000;
     }
